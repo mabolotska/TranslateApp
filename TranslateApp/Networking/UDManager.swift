@@ -22,6 +22,7 @@ protocol UserDefaultsManagerProtocol {
 public enum Keys: String {
 
     case favoriteLanguage = "favoriteLanguage"
+    case destinationLanguage = "destinationLanguage"
 }
 
 

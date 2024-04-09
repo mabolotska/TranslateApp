@@ -30,7 +30,7 @@ class Presenter: PresenterProtocol {
     init(viewController: ViewController? = nil) {
         self.viewController = viewController
         langArray[0] = userDefaultsManager.restoreLanguage(forKey: .favoriteLanguage) ?? "italian"
-        print(selectedLanguage)
+
     }
     var langPickerNumber: Int {
         return langArray.count
@@ -51,9 +51,9 @@ class Presenter: PresenterProtocol {
         if forSourceLanguage {
             selectedLanguage = langArray[row]
             userDefaultsManager.set(selectedLanguage, forKey: .favoriteLanguage)
-            print(selectedLanguage)
         } else {
             destLanguage = languageCode[row]
+            userDefaultsManager.set(destLanguage, forKey: .destinationLanguage)
         }
     }
 
